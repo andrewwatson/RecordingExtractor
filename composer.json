@@ -1,6 +1,6 @@
 {
     "require": {
-        "twilio/sdk": "dev-master",
+        "twilio/sdk": "3.10.0",
         "phpunit/phpunit": "3.7.*"
     }
 }
