@@ -2,6 +2,6 @@
     "require": {
         "twilio/sdk": "3.10.0",
         "phpunit/phpunit": "3.7.*",
-        "aws/aws-sdk-php": "dev-master"
+        "amazonwebservices/aws-sdk-for-php": "1.6.2"
     }
 }
