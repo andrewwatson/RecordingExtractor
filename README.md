@@ -32,3 +32,14 @@ $urls = $e->extractAndRelocate(
 
 var_dump($urls);
 ```
+
+will output something like this:
+
+```
+array(2) {
+  ["mp3"]=>
+  string(116) "https://s3.amazonaws.com/<bucket>/<twilio account sid>/<recording id>.mp3"
+  ["wav"]=>
+  string(116) "https://s3.amazonaws.com/<bucket>/<twilio account sid>/<recording id>.wav"
+}
+```
