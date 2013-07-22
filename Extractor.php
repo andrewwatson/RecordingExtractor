@@ -15,7 +15,6 @@ class Extractor
 
     private $_s3;
     private $_twilio;
-    private $_cdn;
 
     const TYPE_WAV = ".wav";
     const TYPE_MP3 = ".mp3";
