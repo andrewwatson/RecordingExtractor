@@ -94,6 +94,8 @@ class Extractor
 
         $recordingID = $this->_getRecordingFromCall($callID);
 
+        error_log("Extracted ${recordingID} from ${callID}");
+
         $wav = $this->_extractRecording($recordingID, self::TYPE_WAV);
         $mp3 = $this->_extractRecording($recordingID, self::TYPE_MP3);
 
@@ -111,9 +113,8 @@ class Extractor
             error_log("UNABLE TO FETCH ${recordingID} as wav");
         }
 
-
         if ($mp3_rc && $wav_rc) {
-            $this->_removeRecording($recordingID);
+//            $this->_removeRecording($recordingID);
         }
 
         $base = "https://s3.amazonaws.com/" . $this->_bucket . "/" . $this->_twilioAccountSid . "/" . $recordingID;
