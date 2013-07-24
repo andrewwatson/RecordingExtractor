@@ -74,15 +74,28 @@ class Extractor
         }
     }
 
+    private function _getRecordingFromCall($callID)
+    {
+       $call = $this->_twilio->account->calls->get($callID);
+
+       foreach ($call->recordings as $recording) {
+         $recordingID = $recording->sid;
+       }
+
+       return ($recordingID);
+    }
+
     /**
      * @param $recordingID
      * @return bool
      */
-    public function extractAndRelocate($recordingID)
+    public function extractAndRelocate($callID)
     {
 
-        $mp3 = $this->_extractRecording($recordingID, self::TYPE_MP3);
+        $recordingID = $this->_getRecordingFromCall($callID);
+
         $wav = $this->_extractRecording($recordingID, self::TYPE_WAV);
+        $mp3 = $this->_extractRecording($recordingID, self::TYPE_MP3);
 
         $mp3_rc = false;
         if (isset($mp3)) {
